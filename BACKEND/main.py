@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from BACKEND.ROUTER import get_todo,insert_todo,delete_todo,update_todo
+from ROUTER import get_todo,insert_todo,delete_todo,update_todo
 
 app=FastAPI()
 
