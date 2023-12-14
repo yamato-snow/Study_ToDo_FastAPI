@@ -60,10 +60,9 @@ python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-## 5. データベースの作成
-
+## 5. 各ファイルの作成　※git cloneした場合は不要
 ```bash
-python app/models/db.py
+python setup.py
 ```
 ## 6. アプリケーションの起動
 
