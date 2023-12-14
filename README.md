@@ -68,8 +68,8 @@ python app/models/db.py
 ## 6. アプリケーションの起動
 
 ```bash
-Streamlitを起動します。
-streamlit run app.py
+FastAPIを起動する
+uvicorn main:app --reload
 ```
 
 ## 7. アプリケーションの終了
@@ -81,3 +81,81 @@ deactivate
 ## 8. 使用方法
 PostgreSQLとは
 FastAPIとは
+
+## ※注意
+macバージョンでは、以下のエラーが発生する場合があります。
+```bash
+Installing build dependencies ... done
+
+ Getting requirements to build wheel ... error
+
+ error: subprocess-exited-with-error
+
+  
+
+ × Getting requirements to build wheel did not run successfully.
+
+ │ exit code: 1
+
+ ╰─&gt; [21 lines of output]
+
+   running egg_info
+
+   writing psycopg2.egg-info/PKG-INFO
+
+   writing dependency_links to psycopg2.egg-info/dependency_links.txt
+
+   writing top-level names to psycopg2.egg-info/top_level.txt
+
+    
+
+   Error: pg_config executable not found.
+
+    
+
+   pg_config is required to build psycopg2 from source. Please add the directory
+
+   containing pg_config to the $PATH or specify the full executable path with the
+
+   option:
+
+    
+
+     python setup.py build_ext --pg-config /path/to/pg_config build ...
+
+    
+
+   or with the pg_config option in 'setup.cfg'.
+
+    
+
+   If you prefer to avoid building psycopg2 from source, please install the PyPI
+
+   'psycopg2-binary' package instead.
+
+    
+
+   For further information please check the 'doc/src/install.rst' file (also at
+
+   &lt;https://www.psycopg.org/docs/install.html&gt;).
+
+    
+
+   [end of output]
+
+  
+
+ note: This error originates from a subprocess, and is likely not a problem with pip.
+
+error: subprocess-exited-with-error
+
+× Getting requirements to build wheel did not run successfully.
+
+│ exit code: 1
+
+╰─&gt; See above for output.
+
+note: This error originates from a subprocess, and is likely not a problem with pip.
+```
+その場合は、以下の記事を参考にしてください。
+[【小ネタ】Macにpsycopg2をインストールする時のメモ](https://dev.classmethod.jp/articles/mac-psycopg2-install/)
