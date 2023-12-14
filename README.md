@@ -1,6 +1,6 @@
-# Ski Resort Info App
-
-このアプリケーションは、指定したスキー場の情報を取得し表示するものです。天気予報、雪質、リフト券価格などの情報を一元的に確認することができます。
+# Todoアプリケーション
+このアプリケーションは[PostgreSQLとFastAPIで作るTODOアプリケーション](https://zenn.dev/tirimen/articles/7b5861c40e8a77)のサンプルコードです。<br>
+このアプリケーションはtirimenさんのサンプルコードを元に作成しています。<br>
 
 ## インストール方法
 
@@ -78,26 +78,6 @@ streamlit run app.py
 deactivate
 ```
 
-使用方法
-Streamlitが起動すると、ブラウザが開きアプリケーションの画面が表示されます。
-指定したスキー場の情報を検索し、表示します。
-お気に入りのスキー場を保存したり、特定の情報を通知する設定も可能です。
-
-現在
-・スキー場一覧抽出機能（スクレイピングpy）
-・スキー場と現在位置の距離計算機能（utils/web_crawler.py）
-・スキー場と現在地の距離ソート機能（app.py）
-・ユーザー登録機能の実装（app/models/user.py）
-・ユーザーログイン機能の実装（app/models/user.py）
-・お気に入り登録機能の実装（app/models/favorite.py）
-・お気に入り表示機能の実装（app.py）
-
-実装予定
-・天気情報の取得
-・天気情報の表示
-・登録ユーザーへの天気お知らせ機能の実装
-
-アップグレード予定
-・ユーザー属性情報の追加（住んでいる地域、車の有無、家族構成等）
-
-pip install streamlit beautifulsoup4 requests pandas numpy geopy sqlalchemy googlemaps flask flask_sqlalchemy streamlit-ace
+## 8. 使用方法
+PostgreSQLとは
+FastAPIとは
