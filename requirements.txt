@@ -4,3 +4,5 @@ pydantic
 fastapi
 uvicorn
 psycopg2
+streamlit
+requests
