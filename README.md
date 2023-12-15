@@ -158,3 +158,54 @@ note: This error originates from a subprocess, and is likely not a problem with 
 ```
 その場合は、以下の記事を参考にしてください。
 [【小ネタ】Macにpsycopg2をインストールする時のメモ](https://dev.classmethod.jp/articles/mac-psycopg2-install/)
+
+
+# プロジェクト実施時のメモ
+- バックエンド・フロントエンドは`コマンドプロンプト、パワーシェル、ターミナル`はいずれかのコンソールを１つずつ開く必要がある。
+## 1. バックエンド起動方法(FastAPI)
+- 一つ目の`コマンドプロンプト、パワーシェル、ターミナル`いずれかを開き、バックエンドを起動する。
+### 1.1 プロジェクトフォルダに移動
+```bash
+cd 02_todo_list_tool
+```
+### 1.2 仮想環境の立ち上げ
+- windowsコマンドプロンプト
+```bash
+.venv\Scripts\activate.bat
+```
+-  windowsパワーシェル
+```bash
+.venv\Scripts\activate.ps1
+```
+-  macOS
+```bash
+. .venv/bin/activate
+```
+### 1.3 BACKENDを起動
+```bash
+uvicorn main:app --reload --app-dir BACKEND
+```
+
+## 2. フロントエンド起動方法(Streamlit)
+- 二つ目の`コマンドプロンプト、パワーシェル、ターミナル`いずれかを開き、フロントエンドを起動する。
+### 2.1 プロジェクトフォルダに移動
+```bash
+cd 02_todo_list_tool
+```
+### 2.2 仮想環境の立ち上げ
+- windowsコマンドプロンプト
+```bash
+.venv\Scripts\activate.bat
+```
+-  windowsパワーシェル
+```bash
+.venv\Scripts\activate.ps1
+```
+-  macOS
+```bash
+. .venv/bin/activate
+```
+### 2.3 FRONTENDを起動
+```bash
+streamlit run FRONTEND/front.py
+```
