@@ -25,7 +25,7 @@ def read_root():
 def read_root():
     # 簡単な計算を行います。
     hello = 10 + 10
-     # 計算結果を含むJSONレスポンスを返します。
+    # 計算結果を含むJSONレスポンスを返します。
     return {"Hello": hello}
 
 # ToDoリスト関連の各ルーターをアプリケーションに含めます。
