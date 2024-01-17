@@ -85,9 +85,21 @@ elif page=='完了リスト':
 # testページの処理です。
 elif page=='テスト':
     st.title('テスト')
-    # FastAPIサーバーからToDoリストを取得します。
-    url='http://127.0.0.1:8000/test'
-    res=requests.get(url=url)
-    records=res.json()
-    # 完了した項目を表示します。
-    st.subheader(records.get('Hello'))
+
+    with st.form(key='テスト'):
+        # 入力フォームを作成します。
+        weight:float=st.number_input('体重')
+        height:float=st.number_input('身長')
+        submit_button=st.form_submit_button(label='計算')
+
+        # 登録ボタンが押された場合の処理です。
+        if submit_button:
+            # FastAPIサーバーにPOSTリクエストを送信します。
+            url='http://127.0.0.1:8000/test?weight=%s&height=%s'\
+                %(repr(weight),repr(height))
+            
+            res=requests.post(url=url)
+            records=res.json()
+
+            st.subheader('BMI：{:.3g}'.format(records.get('BMI')))
+            st.success('計算完了')
