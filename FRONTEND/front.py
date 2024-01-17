@@ -4,7 +4,7 @@ import requests
 import datetime
 
 # サイドバーでページ選択を行うためのセレクトボックスを作成します。
-page=st.sidebar.selectbox('ページ名',['新規登録','未完了リスト','完了リスト'])
+page=st.sidebar.selectbox('ページ名',['新規登録','未完了リスト','完了リスト','テスト'])
 
 # 新規登録ページの処理です。
 if page=='新規登録':
@@ -81,3 +81,13 @@ elif page=='完了リスト':
         if record.get('completed_flag')==True:
             st.subheader('・'+record.get('deadline'))
             st.write(record.get('todo'))
+
+# testページの処理です。
+elif page=='テスト':
+    st.title('テスト')
+    # FastAPIサーバーからToDoリストを取得します。
+    url='http://127.0.0.1:8000/test'
+    res=requests.get(url=url)
+    records=res.json()
+    # 完了した項目を表示します。
+    st.subheader(records.get('Hello'))

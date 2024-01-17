@@ -9,7 +9,7 @@
 # FastAPIライブラリをインポートします。
 from fastapi import FastAPI
 # 別のファイルからToDoリストに関連する関数をインポートします。
-from ROUTER import get_todo,insert_todo,delete_todo,update_todo
+from ROUTER import get_todo,insert_todo,delete_todo,update_todo,test_todo
 
 # FastAPIのインスタンスを作成します。これがアプリケーションのメインオブジェクトになります。
 app=FastAPI()
@@ -34,3 +34,6 @@ app.include_router(router=get_todo.router)
 app.include_router(router=insert_todo.router)
 app.include_router(router=delete_todo.router)
 app.include_router(router=update_todo.router)
+
+# test関連の各ルーターをアプリケーションに含めます。
+app.include_router(router=test_todo.router)
